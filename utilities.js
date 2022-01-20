@@ -1,5 +1,5 @@
 var stringArray = ['Great deals in London Ontario', 'Probably Left-wing propaganda', 'Probably Right-wing propaganda'];
-	
+	console.log("This is a change");
 var pkbase = `https://script.google.com/macros/s/AKfycbz6mcocfdtAdMf9P9Z9eUpNx6HLgUWMzeX5s75idn7ThEApvcRYDWxJDZNjk-HUquiY/exec`;
 	
 var currentTopic = 'Breaking News';
