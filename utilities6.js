@@ -240,7 +240,6 @@ var currentTopic = 'Breaking News';
 	
 	function sendToDB(upfile, uptitle, uptext){
 		var channel = currentTopic.trim().replaceAll(' ', '');
-		const generaterandomstring = (length=11)=>
 		var postid = Math.random().toString(20).substr(2, 11).toUpperCase();
 		console.log(postid);
 		//var postid = Math.random().toString(36).slice(2).toUpperCase();
