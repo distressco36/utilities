@@ -85,9 +85,9 @@ var currentTopic = 'Breaking News';
 			document.body.appendChild(keyInputDiv);
 		});
 		// load in the RSS Feeds 
-		//var rssFeedChannel1 = {channel: 'CNBCTopNews'}; var rssFeedChannel2 = {channel: 'CNBCTechnology'};
-		//rDB(rssFeedChannel1, 'channel1');
-		//rDB(rssFeedChannel2, 'channel2');
+		var rssFeedChannel1 = {channel: 'CNBCTopNews'}; var rssFeedChannel2 = {channel: 'CNBCTechnology'};
+		rDB(rssFeedChannel1, 'channel1');
+		rDB(rssFeedChannel2, 'channel2');
 		
 		document.querySelector('.terms-conditions').addEventListener('click', function(){
 			openTermsConditions(); 
