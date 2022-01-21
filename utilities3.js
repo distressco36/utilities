@@ -240,7 +240,8 @@ var currentTopic = 'Breaking News';
 	
 	function sendToDB(upfile, uptitle, uptext){
 		var channel = currentTopic.trim().replaceAll(' ', '');
-		const postid = (length=11)=>Math.random().toString(20).substr(2, length)
+		const postid = (length=11)=>Math.random().toString(20).substr(2, length);
+		console.log(postid);
 		//var postid = Math.random().toString(36).slice(2).toUpperCase();
 		var shareURL = `https://distressco.com/content/?ch=${channel}&postid=${postid}`;
 		if(!upfile){
