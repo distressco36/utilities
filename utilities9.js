@@ -181,9 +181,7 @@ var pkbase = `https://script.google.com/macros/s/AKfycbz6mcocfdtAdMf9P9Z9eUpNx6H
 		return;
 	}
 	
-	document.getElementById('go-button').addEventListener('click', function(){
-		document.getElementById('start-page').style.display = 'none';
-	});
+	document.getElementById('go-button').addEventListener('click', () => document.getElementById('start-page').style.display = 'none');
 	
 	function buildPost(data, imageURL, titledata){
 		var resultstring = (data.length > 0)? processInputTxt(data) : '';
