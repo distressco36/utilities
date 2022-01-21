@@ -6,6 +6,7 @@ includeDiv.src = 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment
 includeDiv.integrity = 'sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==';
 includeDiv.crossOrigin = 'anonymous'; includeDiv.setAttribute('referrer-policy', 'no-referrer');
 document.body.appendChild(includeDiv);
+
 var stringArray = ['Great deals in London Ontario', 'Probably Left-wing propaganda', 'Probably Right-wing propaganda'];
 	
 var pkbase = `https://script.google.com/macros/s/AKfycbz6mcocfdtAdMf9P9Z9eUpNx6HLgUWMzeX5s75idn7ThEApvcRYDWxJDZNjk-HUquiY/exec`;
@@ -95,9 +96,9 @@ var pkbase = `https://script.google.com/macros/s/AKfycbz6mcocfdtAdMf9P9Z9eUpNx6H
 			document.body.appendChild(keyInputDiv);
 		});
 		// load in the RSS Feeds 
-		//var rssFeedChannel1 = {channel: 'CNBCTopNews'}; var rssFeedChannel2 = {channel: 'CNBCTechnology'};
-		//rDB(rssFeedChannel1, 'channel1');
-		//rDB(rssFeedChannel2, 'channel2');
+		var rssFeedChannel1 = {channel: 'CNBCTopNews'}; var rssFeedChannel2 = {channel: 'CNBCTechnology'};
+		rRSSDB(rssFeedChannel1, 'channel1');
+		rRSSDB(rssFeedChannel2, 'channel2');
 		
 		document.querySelector('.terms-conditions').addEventListener('click', function(){
 			openTermsConditions(); 
@@ -250,8 +251,8 @@ var pkbase = `https://script.google.com/macros/s/AKfycbz6mcocfdtAdMf9P9Z9eUpNx6H
 	
 	function sendToDB(upfile, uptitle, uptext){
 		var channel = currentTopic.trim().replaceAll(' ', '');
-		var postid = Math.random().toString(36).slice(2).toUpperCase();
-		var shareURL = `${lsul}?channel=${channel}&id=${postid}`;
+		var postid = Math.random().toString(20).substr(2, 11).toUpperCase();
+		var shareURL = `https://distressco.com/content/?ch=${channel}&postid=${postid}`;
 		if(!upfile){
 			var uptextp = processInputTxt(uptext);
 			var dataToSend = {channel: channel, postid: postid, shareurl: shareURL, fileobject: '', caption: '',
@@ -535,6 +536,44 @@ const vimbase = `https://vimeo.com/api/oembed.json?url=`;
 			var message = document.createElement('div'); message.className = 'message sent';
 			message.innerHTML = res.htmlsnippet;
 			document.getElementById('link-grid').insertBefore(message, document.getElementById('link-grid').children[1]);
+		});
+	}
+
+	function rRSSDB(data, output){
+		var channel = data.channel;
+		fetch(`${dbul}?channel=${channel}`)
+		.then((res) => res.text())
+		.then((res) => { 
+			if(res.length <= 10){console.log("No Data"); return;}
+			var jsonres = JSON.parse(res);
+			var visits_created = jsonres.pop();
+			var visitsDiv = document.createElement('div');
+			visitsDiv.style = 'width:100%;text-align:center';
+			visitsDiv.innerHTML = `<span style='color:var(--primary-color);font-weight:bold;'>${visits_created[0][0]} views</span>`;
+			document.getElementById(output).appendChild(visitsDiv);
+			var resultArray = [];
+			for(var i=0; i < jsonres.length; i++){
+				var tempObj = {html: jsonres[i][7]}; //postid: jsonres[i][0], url: jsonres[i][1], post: jsonres[i][2], imageurl: jsonres[i][3], caption: jsonres[i][4], html: jsonres[i][5]};
+				resultArray.push(tempObj);
+			}
+			
+			for(var j = 0; j < resultArray.length; j++){
+				var postElement = document.createElement('div'); postElement.className = 'message sent';
+				postElement.innerHTML = resultArray[j].html;
+				document.getElementById(output).appendChild(postElement);
+				postElement.querySelector('#share').addEventListener('click', async (e) => {
+					var url_to_share = e.target.parentNode.getAttribute('value');
+    				try {
+      				await navigator.share({url: url_to_share, title: `Share this post: ${url_to_share}`});
+       				} catch(err) {console.log(err);}
+  				});
+				if(postElement.querySelector('#media')){
+					postElement.querySelector('#media').addEventListener('click', function(e){
+						window.open(e.target.alt, '_blank');
+					});
+				}
+			}
+			
 		});
 	}
 	
