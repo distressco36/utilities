@@ -96,7 +96,7 @@ var pkbase = `https://script.google.com/macros/s/AKfycbz6mcocfdtAdMf9P9Z9eUpNx6H
 			document.body.appendChild(keyInputDiv);
 		});
 		// load in the RSS Feeds 
-		var rssFeedChannel1 = {channel: 'CNBCTopNews'}; var rssFeedChannel2 = {channel: 'CNBCTechnology'};
+		var rssFeedChannel1 = {channel: 'CNBCFinance'}; var rssFeedChannel2 = {channel: 'CNBCTechnology'};
 		rRSSDB(rssFeedChannel1, 'channel1');
 		rRSSDB(rssFeedChannel2, 'channel2');
 		
