@@ -118,7 +118,7 @@ function buildPostDash() {
 		var divimage = document.createElement('img');
 		divimage.src = imageurl; divimage.className = 'tweet-media-img';
 		var divinput = document.createElement('div'); divinput.className = 'post-textarea';
-		divinput.setAttribute('contenteditable', 'true'); //divinput.style = "height:auto;"
+		divinput.setAttribute('contenteditable', 'true'); divinput.style = "height:auto;overflow-y:scroll"
 		divinput.setAttribute('data-placeholder', 'Add a caption'); divinput.id='caption-input';
 		divinput.setAttribute('autofocus', true); 
 		divinput.addEventListener('input', function(e){
