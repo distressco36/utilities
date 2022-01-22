@@ -136,8 +136,8 @@ function buildPostDash() {
 			background.removeChild(attachmentContainer);
 		});
 		attachmentContainer.appendChild(divExit);
-		attachmentContainer.appendChild(divimage);
 		attachmentContainer.appendChild(divinput);
+		attachmentContainer.appendChild(divimage);
 		background.appendChild(attachmentContainer);
 	});
 	background.appendChild(attachmentInput);
