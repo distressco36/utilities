@@ -49,7 +49,7 @@ window.addEventListener('load', function() {
 		var exitBtn = document.createElement('label'); 
 		exitBtn.className = 'key-input-exit-btn';
 		exitBtn.innerHTML = '&times;';
-		exitBtn.addEventListener('click', (e) => document.body.removeChild(e.target.parentNode));
+		exitBtn.addEventListener('click', (e) => document.getElementById('si-app-wrapper').removeChild(e.target.parentNode));
 		keyInputDiv.appendChild(exitBtn);
 		var keyInput = document.createElement('input');
 		keyInput.type = 'text'; keyInput.className = 'key-input';
@@ -67,7 +67,7 @@ window.addEventListener('load', function() {
 				document.body.removeChild(mask);
 				if(key == 'INVALID'){keyInput.value = ''; keyInput.placeholder = 'Invalid key: Please try again';
 				setTimeout(function(){keyInput.placeholder = 'Insert Posting Key';}, 1500); return;} 
-				document.body.removeChild(keyInputDiv);
+				document.getElementById('si-app-wrapper').removeChild(keyInputDiv);
 				var keyIcon = document.getElementById('key-icon');
 				document.getElementById('si-app-wrapper').querySelector('.post-btn-icon').removeChild(keyIcon);
 				document.getElementById('si-app-wrapper').querySelector('.post-btn-icon').innerHTML = 
