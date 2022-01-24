@@ -616,7 +616,7 @@ rDB(requestchannel, 'si-post-grid');
 	/*document.querySelector('meta[property="og:image"]').setAttribute("content", 'https://hammeryachts.com/userfiles/2299/gallery/Photo%20Jan%2026-%202%2010%2044%20PM.jpg');*/
 	
 
-var currentTheme = 'light'; var oppositecurrentTheme = 'dark';
+/*var currentTheme = 'light'; var oppositecurrentTheme = 'dark';
 window.addEventListener('load', function(e){
     var hourofday = new Date().getHours();
     if((7<= hourofday) && (hourofday < 17)) {
@@ -648,7 +648,7 @@ window.addEventListener('load', function(e){
     	currentTheme = 'dark';
 		oppositecurrentTheme = 'light';
     	return;
-  	});
+  	});*/
 
 
 function autosearch(inp, arr) {
