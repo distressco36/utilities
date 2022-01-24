@@ -15,7 +15,7 @@ var currentTopic = 'Breaking News';
 window.addEventListener('load', function() {
 	document.getElementById('si-app-wrapper').querySelector('.sg-icon-topic').addEventListener('click', function(){
 		var background = document.createElement('div'); background.className = 'topic-background';
-		document.getElementById('app-wrapper').appendChild(background);
+		document.getElementById('si-app-wrapper').appendChild(background);
 		var btncontainer = document.createElement('div'); 
 		btncontainer.className = 'topic-back-btn-container';
 		var backbtn = document.createElement('div'); 
@@ -34,7 +34,7 @@ window.addEventListener('load', function() {
 			e.preventDefault(); 
 			setTimeout(function(){
 				currentTopic = searchinput.value;
-				document.getElementById('app-wrapper').removeChild(background);
+				document.getElementById('si-app-wrapper').removeChild(background);
 				document.getElementById('link-grid').scrollTop = 0;
 			}, 200);
 		}
@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
 		autosearch(searchinput, stringArray);
 	});
 		
-	document.getElementById('app-wrapper').querySelector('#key-icon').addEventListener('click', function(e){
+	document.getElementById('si-app-wrapper').querySelector('#key-icon').addEventListener('click', function(e){
 		var keyInputDiv = document.createElement('div');
 		keyInputDiv.className = 'key-input-background';
 		var exitBtn = document.createElement('label'); 
@@ -69,10 +69,10 @@ window.addEventListener('load', function() {
 				setTimeout(function(){keyInput.placeholder = 'Insert Posting Key';}, 1500); return;} 
 				document.body.removeChild(keyInputDiv);
 				var keyIcon = document.getElementById('key-icon');
-				document.getElementById('app-wrapper').querySelector('.post-btn-icon').removeChild(keyIcon);
-				document.getElementById('app-wrapper').querySelector('.post-btn-icon').innerHTML = 
+				document.getElementById('si-app-wrapper').querySelector('.post-btn-icon').removeChild(keyIcon);
+				document.getElementById('si-app-wrapper').querySelector('.post-btn-icon').innerHTML = 
 				`<p style='font-size:60%' id='post-icon'>POST</p>`; 
-				document.getElementById('app-wrapper').querySelector('#post-icon').addEventListener('click',function(){
+				document.getElementById('si-app-wrapper').querySelector('#post-icon').addEventListener('click',function(){
 					buildPostDash(); return;	
 				});
 			});
@@ -146,7 +146,7 @@ function buildPostDash() {
 	var backbtn = document.createElement('div'); 
 	backbtn.className = 'search-back-btn';
 	backbtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
-	backbtn.addEventListener('click', () => document.getElementById('app-wrapper').removeChild(background));
+	backbtn.addEventListener('click', () => document.getElementById('si-app-wrapper').removeChild(background));
 	btncontainer.appendChild(backbtn);
 	background.appendChild(btncontainer);
 	var inputContainer = document.createElement('div');
@@ -174,7 +174,7 @@ function buildPostDash() {
 	});
 	inputGrid.appendChild(textinput);
 	background.appendChild(inputContainer);
-	document.getElementById('app-wrapper').appendChild(background);
+	document.getElementById('si-app-wrapper').appendChild(background);
 	return;
 }
 	
@@ -225,8 +225,8 @@ function addPostPlane(inputgrid) {
 			var title = (istitle.length > 0) ? istitle : '';
 		}
 		var newPost = buildPost(data, image, title);
-		document.getElementById('link-grid').insertBefore(newPost, document.getElementById('link-grid').children[1]);
-		document.getElementById('app-wrapper').removeChild(document.getElementById('background'));
+		document.getElementById('si-post-grid').insertBefore(newPost, document.getElementById('si-post-grid').children[1]);
+		document.getElementById('si-app-wrapper').removeChild(document.getElementById('background'));
 		if(!isfile){sendToDB(null, null, data); return;}
 		var fr = new FileReader(); fr.readAsArrayBuffer(isfile);
 		fr.onload = function(e) {
