@@ -580,7 +580,7 @@ function rDB(data, output){
 		var visitsDiv = document.createElement('div');
 		visitsDiv.style = 'width:100%;text-align:center';
 		visitsDiv.innerHTML = `<span style='color:var(--primary-color);font-weight:bold;'>${visits_created[0][0]} views</span>`;
-		//document.getElementById(output).appendChild(visitsDiv);
+		document.getElementById(output).appendChild(visitsDiv);
 		var resultArray = [];
 		for(var i=0; i < jsonres.length; i++){
 			var tempObj = {postid: jsonres[i][0], url: jsonres[i][1], post: jsonres[i][2], imageurl: jsonres[i][3], caption: jsonres[i][4], html: jsonres[i][5]};
