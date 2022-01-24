@@ -93,9 +93,9 @@ window.addEventListener('load', function() {
 		document.body.appendChild(keyInputDiv);
 	});
 		// load in the RSS Feeds 
-	var rssFeedChannel1 = {channel: 'CNBCTravel'}; var rssFeedChannel2 = {channel: 'CNBCSmallBusiness'};
-	rRSSDB(rssFeedChannel1, 'channel1');
-	rRSSDB(rssFeedChannel2, 'channel2');
+	//var rssFeedChannel1 = {channel: 'CNBCTravel'}; var rssFeedChannel2 = {channel: 'CNBCSmallBusiness'};
+	//rRSSDB(rssFeedChannel1, 'channel1');
+	//rRSSDB(rssFeedChannel2, 'channel2');
 		
 	document.querySelector('.terms-conditions').addEventListener('click', function(){
 		openTermsConditions(); 
@@ -608,7 +608,7 @@ function rDB(data, output){
 }
 
 var requestchannel = {channel: 'BreakingNews'};
-rDB(requestchannel, 'link-grid');
+rDB(requestchannel, 'si-post-grid');
 		//
 //fetch('https://script.google.com/macros/s/AKfycbzUwjdlWkXDLfHXzSKaT1pgCjaYcNmPY67UsnvpBLj26UJiKz5fvgkWxBhsMBorh92q/exec')
 	//.then((res) => console.log(res));
