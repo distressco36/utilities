@@ -526,7 +526,7 @@ function wDB(data){
 		console.log(res);
 		var message = document.createElement('div'); message.className = 'message sent';
 		message.innerHTML = res.htmlsnippet;
-		document.getElementById('link-grid').insertBefore(message, document.getElementById('link-grid').children[1]);
+		document.getElementById('si-post-grid').insertBefore(message, document.getElementById('si-post-grid').children[1]);
 	});
 }
 
