@@ -13,7 +13,7 @@ var pkbase = `https://script.google.com/macros/s/AKfycbz6mcocfdtAdMf9P9Z9eUpNx6H
 var currentTopic = 'Breaking News';
 // Event Listeners
 window.addEventListener('load', function() {
-	document.getElementById('app-wrapper').querySelector('.sg-icon-topic').addEventListener('click', function(){
+	document.getElementById('si-app-wrapper').querySelector('.sg-icon-topic').addEventListener('click', function(){
 		var background = document.createElement('div'); background.className = 'topic-background';
 		document.getElementById('app-wrapper').appendChild(background);
 		var btncontainer = document.createElement('div'); 
@@ -178,9 +178,9 @@ function buildPostDash() {
 	return;
 }
 	
-document.getElementById('go-button').addEventListener('click', () =>
+/*document.getElementById('go-button').addEventListener('click', () =>
 	document.getElementById('start-page').style.display = 'none'
-);
+);*/
 	
 function buildPost(data, imageURL, titledata){
 	var resultstring = (data.length > 0)? processInputTxt(data) : '';
