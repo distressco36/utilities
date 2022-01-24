@@ -90,7 +90,7 @@ window.addEventListener('load', function() {
 			document.body.removeChild(keyInputDiv);
 		});
 		keyInputDiv.appendChild(paymentLink);										
-		document.body.appendChild(keyInputDiv);
+		document.getElementById('si-app-wrapper').appendChild(keyInputDiv);
 	});
 		// load in the RSS Feeds 
 	//var rssFeedChannel1 = {channel: 'CNBCTravel'}; var rssFeedChannel2 = {channel: 'CNBCSmallBusiness'};
