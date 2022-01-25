@@ -39,6 +39,7 @@ window.addEventListener('load', function() {
 			e.preventDefault(); 
 			setTimeout(function(){
 				currentTopic = searchinput.value;
+				document.getElementById('current-topic-ch').innerHTML = `${currentTopic}`;
 				document.getElementById('si-app-wrapper').removeChild(background);
 				document.getElementById('si-post-grid').scrollTop = 0;
 			}, 200);
