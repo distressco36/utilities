@@ -433,6 +433,7 @@ async function postYouTube(url){
 async function postUrlPreview(url){
 	var htmlresult = await fetchUrl(url);
 	var metaData = parseMeta(htmlresult[1], url);
+	console.log(metaData);
 	if(metaData == "Failed"){return("No Media");}
 	//console.log(metaData);
 	//linkGridHandle = document.getElementById('si-post-grid');
