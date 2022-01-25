@@ -5,6 +5,10 @@ includeDiv.integrity = 'sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG
 includeDiv.crossOrigin = 'anonymous'; includeDiv.setAttribute('referrer-policy', 'no-referrer');
 document.body.appendChild(includeDiv);
 
+fetch('https://script.google.com/macros/s/AKfycbykwYXhKDOS93pFjPuS4yLVpRKxy4nfq9N36r48KZx-VSrXihJJRXOI7naKB1y93_1n2A/exec')
+.then((res) => res.json())
+.then((res) => {console.log(res); stringArray = res;});
+
 var stringArray = ['Great deals in London Ontario', 'Probably Left-wing propaganda', 'Probably Right-wing propaganda', 'Buy this not that - consumer electronics'];
 	
 var pkbase = `https://script.google.com/macros/s/AKfycbz6mcocfdtAdMf9P9Z9eUpNx6HLgUWMzeX5s75idn7ThEApvcRYDWxJDZNjk-HUquiY/exec`;
