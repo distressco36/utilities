@@ -179,6 +179,7 @@ function buildPost(data, imageURL, titledata){
 	var faviconlink = 'https://distressco.com/wp-content/uploads/2022/01/BrowseTopicIcon.png';
 	var image = (imageURL == '') ? '' : imageURL; var title = (titledata == '')? '' : processInputTxt(titledata);
 	var urlpreview = 'No Media';
+	console.log(previewlinkArray.length);
 	if(previewlinkArray.length > 0){
 		urlpreview = postUrlPreview(previewlinkArray[0]);
 		console.log("loading preview");
