@@ -181,7 +181,7 @@ function buildPost(data, imageURL, titledata){
 	var urlpreview = 'No Media';
 	console.log(previewlinkArray.length);
 	//if(previewlinkArray.length > 0){
-		urlpreview = postUrlPreview('https://www.freemanboatworks.com') //previewlinkArray[0]);
+		urlpreview = postUrlPreview(previewlinkArray[0]);
 		console.log("loading preview");
 	//}
 	urlpreview = (urlpreview != 'No Media') ? urlpreview : '';
