@@ -171,7 +171,7 @@ function buildPostDash() {
 	document.getElementById('si-app-wrapper').appendChild(background);
 	return;
 }
-	
+var previewlinkArray = [];	
 function buildPost(data, imageURL, titledata){
 	var resultstring = (data.length > 0) ? processInputTxt(data) : '';
 	var newPostMessage = document.createElement('div'); newPostMessage.className = 'message sent';
@@ -192,7 +192,7 @@ function buildPost(data, imageURL, titledata){
 	newPostMessage.innerHTML = `<blockquote class="twitter-tweet"><div class='blockquote-header'>Browse Topic<img class='blockquote-logo' id='blockquote-logo' src='${faviconlink}'></img></div><p lang='en' dir='ltr'><p>${resultstring}</p><div>${urlpreview}</div></blockquote><div class='share-icon-container'><i class="fas fa-share coin" id='share'></i></div><div class='post-format'><span class="metadata"><span class="time">${moment(timestamp).format('LLL')}</span></span></div>`;
 	return(newPostMessage);
 }
-var previewlinkArray = [];	
+	
 function processInputTxt(inputText){
 	var textparsearray = inputText.trim().split(' '); 
 	var resultstring = '';
