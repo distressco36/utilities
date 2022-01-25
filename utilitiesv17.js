@@ -255,9 +255,9 @@ function removePostPlane(inputgrid, postbtn){
 function sendToDB(upfile, uptitle, uptext){
 	var channel = currentTopic.trim(); //.replaceAll(' ', '+');
 	var channelShareForm = currentTopic.trim().replaceAll(' ', '+');
-	channelShareForm.replaceAll("'", '');
+	var channelShare = channelShareForm.replaceAll("'", '');
 	var postid = Math.random().toString(20).substr(2, 11).toUpperCase();
-	var shareURL = `https://distressco.com/content/?ch=${channelShareForm}&postid=${postid}`;
+	var shareURL = `https://distressco.com/content/?ch=${channelShare}&postid=${postid}`;
 	if(!upfile){
 		var uptextp = processInputTxt(uptext);
 		var dataToSend = {channel: channel, postid: postid, shareurl: shareURL, fileobject: '', caption: '',
