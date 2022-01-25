@@ -15,6 +15,7 @@ var pkbase = `https://script.google.com/macros/s/AKfycbz6mcocfdtAdMf9P9Z9eUpNx6H
 	
 
 var currentTopic = 'Breaking News';
+document.getElementById('current-topic-ch').innerHTML = `{currentTopic}`;
 // Event Listeners
 window.addEventListener('load', function() {
 	document.getElementById('si-app-wrapper').querySelector('.si-icon-topic').addEventListener('click', function(){
