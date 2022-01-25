@@ -181,7 +181,7 @@ function buildPost(data, imageURL, titledata){
 	var urlpreview = 'No Media';
 	if(previewlinkArray.length > 0){
 		urlpreview = postUrlPreview(previewlinkArray[0]);
-		console.log("loading preview"):
+		console.log("loading preview");
 	}
 	urlpreview = (urlpreview != 'No Media') ? urlpreview : '';
 	if(imageURL != ''){
