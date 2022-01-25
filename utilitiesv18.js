@@ -254,13 +254,14 @@ function removePostPlane(inputgrid, postbtn){
 	
 function sendToDB(upfile, uptitle, uptext){
 	var channel = currentTopic.trim(); //.replaceAll(' ', '+');
+	var channelrev = channel.removeAll("'", '');
 	var channelShareForm = currentTopic.trim().replaceAll(' ', '+');
 	var channelShare = channelShareForm.replaceAll("'", '');
 	var postid = Math.random().toString(20).substr(2, 11).toUpperCase();
 	var shareURL = `https://distressco.com/content/?ch=${channelShare}&postid=${postid}`;
 	if(!upfile){
 		var uptextp = processInputTxt(uptext);
-		var dataToSend = {channel: channel, postid: postid, shareurl: shareURL, fileobject: '', caption: '',
+		var dataToSend = {channel: channelrev, postid: postid, shareurl: shareURL, fileobject: '', caption: '',
 			post: uptextp
 		};
 		wDB(dataToSend);
