@@ -254,7 +254,7 @@ function removePostPlane(inputgrid, postbtn){
 	
 function sendToDB(upfile, uptitle, uptext){
 	var channel = currentTopic.trim(); //.replaceAll(' ', '+');
-	var channelrev = channel.removeAll("'", '');
+	var channelrev = channel.replaceAll("'", '');
 	var channelShareForm = currentTopic.trim().replaceAll(' ', '+');
 	var channelShare = channelShareForm.replaceAll("'", '');
 	var postid = Math.random().toString(20).substr(2, 11).toUpperCase();
