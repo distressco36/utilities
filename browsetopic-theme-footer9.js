@@ -180,10 +180,10 @@ function buildPost(data, imageURL, titledata){
 	var image = (imageURL == '') ? '' : imageURL; var title = (titledata == '')? '' : processInputTxt(titledata);
 	var urlpreview = 'No Media';
 	console.log(previewlinkArray.length);
-	if(previewlinkArray.length > 0){
-		urlpreview = postUrlPreview(previewlinkArray[0]);
+	//if(previewlinkArray.length > 0){
+		urlpreview = postUrlPreview('https://www.freemanboatworks.com') //previewlinkArray[0]);
 		console.log("loading preview");
-	}
+	//}
 	urlpreview = (urlpreview != 'No Media') ? urlpreview : '';
 	if(imageURL != ''){
 	newPostMessage.innerHTML = `<blockquote class="twitter-tweet"><div class='blockquote-header'>Browse Topic<img class='blockquote-logo' id='blockquote-logo' src='${faviconlink}'></img></div><p lang='en' dir='ltr'><p>${resultstring}</p><div class='tweet-media-inner-div'><img class='tweet-media-img' id='media' src='${image}' alt='${image}'</img><div class='tweet-media-title'>${title}</div></div><div>${urlpreview}</div></blockquote><div class='share-icon-container'><i class="fas fa-share coin" id='share'></i></div><div class='post-format'><span class="metadata"><span class="time">${moment(timestamp).format('LLL')}</span></span></div>`;
