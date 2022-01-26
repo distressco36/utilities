@@ -76,7 +76,6 @@ window.addEventListener('load', function() {
 				if(key == 'INVALID'){keyInput.value = ''; keyInput.placeholder = 'Invalid key: Please try again';
 				setTimeout(function(){keyInput.placeholder = 'Insert Posting Key';}, 1500); return;} 
 				postingKey = keyInput.value;
-				console.log(postingKey);
 				document.getElementById('si-app-wrapper').removeChild(keyInputDiv);
 				var keyIcon = document.getElementById('key-icon');
 				document.getElementById('si-app-wrapper').querySelector('.post-btn-icon').removeChild(keyIcon);
