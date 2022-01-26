@@ -189,10 +189,10 @@ async function buildPost(data, imageURL, titledata){
 	}
 	urlpreview = (urlpreview != 'No Media') ? urlpreview : '';
 	if(image != ''){
-	newPostMessage.innerHTML = `<blockquote class="twitter-tweet"><div class='blockquote-header'>THE STANDARD INFORMER</div><p lang='en' dir='ltr'><p>${resultstring}</p><div class='tweet-media-inner-div'><img class='tweet-media-img' id='media' src='${image}' alt='${image}'</img><div class='tweet-media-title'>${title}</div></div><div>${urlpreview}</div></blockquote><div class='share-icon-container'><i class="fas fa-share coin" id='share'></i></div><div class='post-format'><span class="metadata"><span class="time">${moment(timestamp).format('LLL')}</span></span></div>`;
+	newPostMessage.innerHTML = `<blockquote class="twitter-tweet"><div class='blockquote-header'>THE STANDARD INFORMER</div><div class='posting-key'>${postingKey}</div><p lang='en' dir='ltr'><p>${resultstring}</p><div class='tweet-media-inner-div'><img class='tweet-media-img' id='media' src='${image}' alt='${image}'</img><div class='tweet-media-title'>${title}</div></div><div>${urlpreview}</div></blockquote><div class='share-icon-container'><i class="fas fa-share coin" id='share'></i></div><div class='post-format'><span class="metadata"><span class="time">${moment(timestamp).format('LLL')}</span></span></div>`;
 		return Promise.resolve(newPostMessage);
 	}
-	newPostMessage.innerHTML = `<blockquote class="twitter-tweet"><div class='blockquote-header'>THE STANDARD INFORMER</div><p lang='en' dir='ltr'><p>${resultstring}</p><div>${urlpreview}</div></blockquote><div class='share-icon-container'><i class="fas fa-share coin" id='share'></i></div><div class='post-format'><span class="metadata"><span class="time">${moment(timestamp).format('LLL')}</span></span></div>`;
+	newPostMessage.innerHTML = `<blockquote class="twitter-tweet"><div class='blockquote-header'>THE STANDARD INFORMER</div><div class='posting-key'>${postingKey}</div><p lang='en' dir='ltr'><p>${resultstring}</p><div>${urlpreview}</div></blockquote><div class='share-icon-container'><i class="fas fa-share coin" id='share'></i></div><div class='post-format'><span class="metadata"><span class="time">${moment(timestamp).format('LLL')}</span></span></div>`;
 	return Promise.resolve(newPostMessage);
 }
 
