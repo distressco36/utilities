@@ -357,11 +357,12 @@ function buildMessage(meta){
     var sitename = (meta['og:site_name']) ? meta['og:site_name'] : '';
 	var title = (meta['og:title']) ? meta['og:title'] : (meta['twitter:title']) ? meta['twitter:title'] : meta['fallback:title'] ? meta['fallback:title'] : '';
 	var description = (meta['og:description']) ? meta['og:description'] : (meta['twitter:description']) ? meta['twitter:description'] : (meta['description']) ? meta['description'] : '';
+	console.log(image);
 	var imagesecure = '';
-	if(image.includes('http')){imagesecure = image.replace('http', 'https');}
+	if(image.includes('http')){imagesecure = image.replace('http', 'https'); console.log(imagesecure);}
     var message = `<div class='post-message-url'><a href=${url.toString()} target='_blank'>${url.toString()}</a></div>
 <div class='post-preview-box'>
-<img src=${image} class='post-preview-img'></img>
+<img src=${imagesecure} class='post-preview-img'></img>
 <div class='preview-title' style='color:var(--primary-color);font-weight:bold'>${sitename}</div>
 <div class='preview-title' style='font-weight:bold'>${title}</div>
 <div class='preview-title'>${description}</div>
