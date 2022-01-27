@@ -340,7 +340,7 @@ function parseMeta(html, url) {
 				var baseIndex = url.indexOf('http');
 				var baseURL = '';
 				var newurl = url + "/";
-				while(newurl[baseIndex + 9] != '/'){baseURL += newurl[baseIndex + 9]; baseIndex++;}
+				while(newurl[baseIndex + 8] != '/'){baseURL += newurl[baseIndex + 8]; baseIndex++;}
 				imagenew = image.replace('https://distressco.com', `https://${baseURL}`);
 			}
 			metaObj['og:image'] = imagenew;
