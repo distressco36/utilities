@@ -8,6 +8,13 @@ fetch('https://script.google.com/macros/s/AKfycbykwYXhKDOS93pFjPuS4yLVpRKxy4nfq9
 .then((res) => res.json())
 .then((res) => {topicChannelArray = res;});
 
+async function digestMessage(message) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(message);
+  const hash = await crypto.subtle.digest('SHA-256', data);
+  return hash;
+}
+
 var topicChannelArray = []; 
 var postingKey = '';
 	
@@ -75,7 +82,7 @@ window.addEventListener('load', function() {
 				document.getElementById('topic-posting-grid').removeChild(mask);
 				if(key == 'INVALID'){keyInput.value = ''; keyInput.placeholder = 'Invalid key: Please try again';
 				setTimeout(function(){keyInput.placeholder = 'Insert Posting Key';}, 1500); return;} 
-				postingKey = keyInput.value;
+				digestMessage(keyInput.value).then((res) => {postingKey = res;});
 				document.getElementById('si-app-wrapper').removeChild(keyInputDiv);
 				var keyIcon = document.getElementById('key-icon');
 				document.getElementById('si-app-wrapper').querySelector('.post-btn-icon').removeChild(keyIcon);
