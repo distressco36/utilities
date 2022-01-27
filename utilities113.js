@@ -32,6 +32,16 @@ window.addEventListener('load', function() {
 		exitbtn.innerHTML = '&times';
 		exitbtn.addEventListener('click', (e) => document.body.removeChild(e.target.parentNode));
 		background.appendChild(exitbtn);
+		var inputName = document.createElement('input');
+		inputName.className = 'sp-input'; inputName.placeholder = 'Name of contact person';
+		inputName.type = 'text'; inputName.style = 'margin-top:2em;';
+		background.appendChild(inputName);
+		var inputEmail = document.createElement('input');
+		inputEmail.type = 'email'; inputEmail.placeholder = 'Email of contact person';
+		background.appendChild(inputEmail);
+		var inputTextArea = document.createElement('textarea');
+		inputTextArea.className = 'sp-textarea';
+		background.appendChild(inputTextArea);
 		document.body.appendChild(background);
 	});
 	
