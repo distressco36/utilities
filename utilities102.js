@@ -340,12 +340,12 @@ function parseMeta(html, url) {
 				var baseIndex = url.indexOf('http');
 				var baseURL = '';
 				var newurl = url + "/";
-				while(newurl[baseIndex + 8] != '/'){baseURL += newurl[baseIndex + 8]; baseIndex++;}
+				while(newurl[baseIndex + 9] != '/'){baseURL += newurl[baseIndex + 9]; baseIndex++;}
 				imagenew = image.replace('https://distressco.com', `https://${baseURL}`);
 			}
 			metaObj['og:image'] = imagenew;
 		}
-		else metaObj['og:image'] = 'http://distressco.com/wp-content/uploads/2022/01/author-e1643032060782.jpg';
+		else metaObj['og:image'] = 'https://distressco.com/wp-content/uploads/2022/01/author-e1643032060782.jpg';
 	}
     return(metaObj);
 }
