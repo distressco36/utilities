@@ -9,10 +9,11 @@ fetch('https://script.google.com/macros/s/AKfycbykwYXhKDOS93pFjPuS4yLVpRKxy4nfq9
 .then((res) => {topicChannelArray = res;});
 
 async function digestMessage(message) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(message);
-  const hash = await crypto.subtle.digest('SHA-256', data);
-  return hash;
+  const msgUint8 = new TextEncoder().encode(message);                           
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           
+  const hashArray = Array.from(new Uint8Array(hashBuffer));                     
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); 
+  return hashHex;
 }
 
 var topicChannelArray = []; 
