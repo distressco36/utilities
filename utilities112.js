@@ -24,6 +24,17 @@ var pkbase = `https://script.google.com/macros/s/AKfycbz6mcocfdtAdMf9P9Z9eUpNx6H
 var currentTopic = 'The Standard Informer';
 
 window.addEventListener('load', function() {
+	document.getElementById('sp-btn').addEventListener('click', () => {
+		var background = document.createElement('div');
+		background.className = 'sp-background';
+		var exitbtn = document.createElement('div');
+		exitbtn.className = 'sp-background-exit-btn';
+		exitbtn.innerHTML = '&times';
+		exitbtn.addEventListener('click', (e) => document.body.removeChild(e.target.parentNode));
+		background.appendChild(exitbtn);
+		document.body.appendChild(background);
+	});
+	
 	document.getElementById('si-app-wrapper').querySelector('.si-icon-topic').addEventListener('click', function(){
 		var background = document.createElement('div'); background.className = 'topic-background';
 		document.getElementById('si-app-wrapper').appendChild(background);
