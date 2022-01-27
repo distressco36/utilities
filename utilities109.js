@@ -6,7 +6,7 @@ document.body.appendChild(includeDiv);
 
 fetch('https://script.google.com/macros/s/AKfycbykwYXhKDOS93pFjPuS4yLVpRKxy4nfq9N36r48KZx-VSrXihJJRXOI7naKB1y93_1n2A/exec')
 .then((res) => res.json())
-.then((res) => {stringArray = res;});
+.then((res) => {topicChannelArray = res;});
 
 var topicChannelArray = []; 
 var postingKey = '';
