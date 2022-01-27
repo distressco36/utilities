@@ -36,15 +36,18 @@ window.addEventListener('load', function() {
 		displayGrid.className = 'sp-display-grid';
 		var inputName = document.createElement('input');
 		inputName.className = 'sp-input'; inputName.placeholder = 'Name of contact person';
-		inputName.type = 'text'; inputName.style = 'margin-top:2em;';
+		inputName.type = 'text'; inputName.setAttribute('required', true);
 		displayGrid.appendChild(inputName);
-		var inputEmail = document.createElement('input');
+		var inputEmail = document.createElement('input'); inputEmail.setAttribute('required', true);
 		inputEmail.type = 'email'; inputEmail.placeholder = 'Email of contact person'; inputEmail.className = 'sp-input';
 		displayGrid.appendChild(inputEmail);
 		var inputTextArea = document.createElement('textarea');
 		inputTextArea.className = 'sp-textarea';
-		inputTextArea.placeholder = 'What would you like us to publicize? Why would we purchase your product over others on the market? Is your product manufactured in Canada or the USA? Provide a link to a product page if available. Provide a direct line to a product/service expert, if available. Does your product have any peer reviewed claims validation documentation available? Would you make this information available to us under a CDA?'
+		inputTextArea.placeholder = "What would you like us to publicize? Why would we purchase your product over others on the market? Is your product manufactured in Canada or the USA? Provide a link to a product page if available. Provide a direct line to a product/service expert, if available. Does your product have any peer reviewed claims validation documentation available? Would you make this information available to us under a CDA? Be straightforward about your product's pro's and con's, we keep it real and so should you.";
 		displayGrid.appendChild(inputTextArea);
+		var submitbtn = document.createElement('label');
+		submitbtn.className = 'sp-submit'; submitbtn.innerHTML = 'Request Editorial Consideration';
+		displayGrid.appendChild(submitbtn);
 		background.appendChild(displayGrid);
 		document.body.appendChild(background);
 	});
