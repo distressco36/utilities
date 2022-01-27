@@ -335,7 +335,6 @@ function parseMeta(html, url) {
 		var body = html.body;
 		if(body.getElementsByTagName('img').length > 0){
 			var image = body.getElementsByTagName('img')[0].src;
-			console.log(image);
 			var imagenew;
 			if (image.includes('distressco')){
 				var baseIndex = url.indexOf('http');
@@ -343,7 +342,6 @@ function parseMeta(html, url) {
 				var newurl = url + "/";
 				while(newurl[baseIndex + 8] != '/'){baseURL += newurl[baseIndex + 8]; baseIndex++;}
 				imagenew = image.replace('https://distressco.com', `https://${baseURL}`);
-				console.log(imagenew);
 			}
 			metaObj['og:image'] = imagenew;
 		}
