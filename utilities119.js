@@ -49,11 +49,16 @@ window.addEventListener('load', function() {
 		submitbtn.className = 'sp-submit'; submitbtn.innerHTML = 'Request Editorial Consideration';
 		submitbtn.addEventListener('click', () => {
 			if(inputName.value == '' || inputEmail.value == '') {return;}
+			var mask = document.createElement('div');
+			mask.style = 'position:fixed;top:0;left:0;width:100%;height:100vh;z-index:4;background-color:#00000099;';
+			background.appendChild(mask);
 			var dataToSend = {name: inputName.value, email: inputEmail.value, communication: inputTextArea.value};
 			var url = 'https://script.google.com/macros/s/AKfycbxiw4KbLcdYyQsoNIHpiz36CNnIZZxxhVQkl937-QE9ExiFVd9CvCIbKQ8whCJUm6SXvA/exec';
 			fetch(url, { method: "POST", body: JSON.stringify(dataToSend) })
   			.then((res) => res.json())
-			.then((res) => console.log(res));
+			.then((res) => {
+				document.body.removeChild(background);
+			});
 		});
 		displayGrid.appendChild(submitbtn);
 		background.appendChild(displayGrid);
