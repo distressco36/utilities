@@ -397,6 +397,7 @@ function parseMeta(html, url) {
 		}
 		else metaObj['og:image'] = 'https://distressco.com/wp-content/uploads/2022/01/author-e1643032060782.jpg';
 	}
+	console.log(metaObj);
     return(metaObj);
 }
 	
