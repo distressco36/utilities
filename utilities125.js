@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
 		displayGrid.appendChild(inputEmail);
 		var inputTextArea = document.createElement('textarea');
 		inputTextArea.className = 'sp-textarea';
-		inputTextArea.placeholder = `What would you like us to publicize? Why would we purchase your product over others on the market? Is your product manufactured in Canada or the USA? Provide a link to a product page if available. Provide a direct line to a product/service expert, if available. Does your product have any peer reviewed claims validation documentation available? Would you make this information available to us under a CDA? Be straightforward about your product's pro's and con's, we keep it real and so should you.`;
+		inputTextArea.placeholder = `What would you like us to publicize? Please specify whether your product is domestically produced or imported. Provide a link to a product page if available and a direct line to a product/service expert, if available. Does your product have any claims validation documentation available? Be straightforward about your product, we all live in the real world. You will not receive a confirmation email from this submission. We will contact you if we choose to move forward with the editorial.`;
 		displayGrid.appendChild(inputTextArea);
 		var submitbtn = document.createElement('label');
 		submitbtn.className = 'sp-submit'; submitbtn.innerHTML = 'Submit';
