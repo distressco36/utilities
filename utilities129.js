@@ -367,6 +367,7 @@ function fetchUrl(url){
 function parseMeta(html, url) {
     var headElement = html.head;
     var metaElements = headElement.getElementsByTagName('meta');
+	console.log(metaElements);
     var metaObj = {};
     for(var i = 0; i < metaElements.length; i++){
       	if(metaElements[i].getAttribute('name')){
