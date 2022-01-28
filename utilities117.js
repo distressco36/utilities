@@ -47,6 +47,13 @@ window.addEventListener('load', function() {
 		displayGrid.appendChild(inputTextArea);
 		var submitbtn = document.createElement('label');
 		submitbtn.className = 'sp-submit'; submitbtn.innerHTML = 'Request Editorial Consideration';
+		submitbtn.addEventListener('click', () => {
+			if(inputName.value == '' || inputEmail.value == '') {return;}
+			var dataToSend = {name: inputName.value, email: inputEmail.value, communication: inputTextArea.value};
+			var url = 'https://script.google.com/macros/s/AKfycbxiw4KbLcdYyQsoNIHpiz36CNnIZZxxhVQkl937-QE9ExiFVd9CvCIbKQ8whCJUm6SXvA/exec';
+			fetch(url, { method: "POST", body: JSON.stringify(dataToSend) })
+  			.then((res) => res.json());
+		});
 		displayGrid.appendChild(submitbtn);
 		background.appendChild(displayGrid);
 		document.body.appendChild(background);
