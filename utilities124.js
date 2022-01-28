@@ -49,6 +49,7 @@ window.addEventListener('load', function() {
 		submitbtn.className = 'sp-submit'; submitbtn.innerHTML = 'Submit';
 		submitbtn.addEventListener('click', () => {
 			if(inputName.value == '' || inputEmail.value == '') {return;}
+			if(!(inputEmail.value.includes('@') && inputEmail.value.includes('.'))){return;}
 			var mask = document.createElement('div');
 			mask.style = 'position:fixed;top:0;left:0;width:100%;height:100vh;z-index:4;background-color:#00000099;';
 			background.appendChild(mask);
