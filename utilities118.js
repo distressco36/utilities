@@ -52,7 +52,8 @@ window.addEventListener('load', function() {
 			var dataToSend = {name: inputName.value, email: inputEmail.value, communication: inputTextArea.value};
 			var url = 'https://script.google.com/macros/s/AKfycbxiw4KbLcdYyQsoNIHpiz36CNnIZZxxhVQkl937-QE9ExiFVd9CvCIbKQ8whCJUm6SXvA/exec';
 			fetch(url, { method: "POST", body: JSON.stringify(dataToSend) })
-  			.then((res) => res.json());
+  			.then((res) => res.json())
+			.then((res) => console.log(res));
 		});
 		displayGrid.appendChild(submitbtn);
 		background.appendChild(displayGrid);
