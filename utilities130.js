@@ -367,7 +367,6 @@ function fetchUrl(url){
 function parseMeta(html, url) {
     var headElement = html.head;
     var metaElements = headElement.getElementsByTagName('meta');
-	console.log(metaElements);
     var metaObj = {};
     for(var i = 0; i < metaElements.length; i++){
       	if(metaElements[i].getAttribute('name')){
@@ -377,7 +376,6 @@ function parseMeta(html, url) {
         	metaObj[metaElements[i].getAttribute('property')] = metaElements[i].content;
       	}
     }
-	console.log(metaObj);
 	if(html.head.getElementsByTagName('title')){
 		var title = html.head.getElementsByTagName('title')[0].innerHTML;
 		metaObj['fallback:title'] = title;
@@ -399,7 +397,6 @@ function parseMeta(html, url) {
 		}
 		else metaObj['og:image'] = 'https://distressco.com/wp-content/uploads/2022/01/author-e1643032060782.jpg';
 	}
-	console.log(metaObj);
     return(metaObj);
 }
 	
