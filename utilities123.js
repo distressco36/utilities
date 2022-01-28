@@ -46,7 +46,7 @@ window.addEventListener('load', function() {
 		inputTextArea.placeholder = `What would you like us to publicize? Why would we purchase your product over others on the market? Is your product manufactured in Canada or the USA? Provide a link to a product page if available. Provide a direct line to a product/service expert, if available. Does your product have any peer reviewed claims validation documentation available? Would you make this information available to us under a CDA? Be straightforward about your product's pro's and con's, we keep it real and so should you.`;
 		displayGrid.appendChild(inputTextArea);
 		var submitbtn = document.createElement('label');
-		submitbtn.className = 'sp-submit'; submitbtn.innerHTML = 'Request Editorial Consideration';
+		submitbtn.className = 'sp-submit'; submitbtn.innerHTML = 'Submit';
 		submitbtn.addEventListener('click', () => {
 			if(inputName.value == '' || inputEmail.value == '') {return;}
 			var mask = document.createElement('div');
