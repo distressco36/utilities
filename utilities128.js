@@ -376,6 +376,7 @@ function parseMeta(html, url) {
         	metaObj[metaElements[i].getAttribute('property')] = metaElements[i].content;
       	}
     }
+	console.log(metaObj);
 	if(html.head.getElementsByTagName('title')){
 		var title = html.head.getElementsByTagName('title')[0].innerHTML;
 		metaObj['fallback:title'] = title;
