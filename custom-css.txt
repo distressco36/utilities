@@ -1,0 +1,12 @@
+.coming-soon {
+position: absolute;
+	top: 0;
+	left 0;
+	height: 100vh;
+	width: 100%;
+	background-color: #002868;
+	color: White;
+	display: grid;
+	align-content: center;
+	justify-content: center;
+}
