@@ -50,10 +50,10 @@ var searchHandle = document.getElementById('article-searchbar');
 autosearch(searchHandle, articleArray);
 
 searchHandle.addEventListener('change', (e) => {
-	//if(this.value == ''){return;}
-	console.log(searchHandle.value);
-	console.log(articleObj[searchHandle.value]);
-	/*setTimeout(function(){
-		window.open(articleObj[`${this.value}`], '_top');
-	}, 200);*/
+	if(this.value == ''){return;}
+	//console.log(searchHandle.value);
+	//console.log(articleObj[searchHandle.value]);
+	setTimeout(function(){
+		window.open(articleObj[searchHandle.value], '_top');
+	}, 200);
 });
