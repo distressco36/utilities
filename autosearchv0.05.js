@@ -51,7 +51,8 @@ autosearch(searchHandle, articleArray);
 
 searchHandle.addEventListener('change', (e) => {
 	//if(this.value == ''){return;}
-	setTimeout(function(){
+	console.log(articleObj[`${this.value}`]);
+	/*setTimeout(function(){
 		window.open(articleObj[`${this.value}`], '_top');
-	}, 200);
+	}, 200);*/
 });
