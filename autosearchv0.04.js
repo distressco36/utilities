@@ -50,7 +50,7 @@ var searchHandle = document.getElementById('article-searchbar');
 autosearch(searchHandle, articleArray);
 
 searchHandle.addEventListener('change', (e) => {
-	if(this.value == ''){return;}
+	//if(this.value == ''){return;}
 	setTimeout(function(){
 		window.open(articleObj[`${this.value}`], '_top');
 	}, 200);
