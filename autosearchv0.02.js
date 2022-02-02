@@ -51,6 +51,6 @@ autosearch(searchHandle, articleArray);
 
 searchHandle.addEventListener('change', (e) => {
 	setTimeout(function(){
-		window.open('https://www.google.com');
+		window.open('https://www.google.com', '_top');
 	}, 200);
 });
