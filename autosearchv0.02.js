@@ -50,7 +50,8 @@ var searchHandle = document.getElementById('article-searchbar');
 autosearch(searchHandle, articleArray);
 
 searchHandle.addEventListener('change', (e) => {
+	if(this.value == ''){return;}
 	setTimeout(function(){
-		window.open('https://www.google.com', '_top');
+		window.open(articleObj[`${this.value}`], '_top');
 	}, 200);
 });
