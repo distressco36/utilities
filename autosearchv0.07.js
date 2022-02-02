@@ -51,7 +51,7 @@ autosearch(searchHandle, articleArray);
 
 searchHandle.addEventListener('change', (e) => {
 	//if(this.value == ''){return;}
-	console.log(articleObj[this.value]);
+	console.log(articleObj);
 	/*setTimeout(function(){
 		window.open(articleObj[`${this.value}`], '_top');
 	}, 200);*/
