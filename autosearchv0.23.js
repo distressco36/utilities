@@ -62,9 +62,10 @@ window.addEventListener('load', () => {
 		document.getElementById('submit-review-btn').addEventListener('click', (e) => {
 			e.preventDefault();
 			var element = e.target.parentNode.children[0];
+			var info = document.querySelector('.product-review-request').value;
 			var email = element.value;
 			(email == '') ? displayMessage(element, "Please provide an email address") : 
-			(!(email.includes('@') && email.includes('.'))) ? displayMessage(element, "Invalid Email Address") : console.log('Good Job');
+			(!(email.includes('@') && email.includes('.'))) ? displayMessage(element, "Invalid Email Address") : sendData(email, info);
 		});
 	}
 });
@@ -74,4 +75,9 @@ function displayMessage(element, message) {
 	element.placeholder = message;
 	setTimeout(function(){element.placeholder = 'Email Address'}, 1500);
 	return;
+}
+
+function sendData(email, info) {
+	var obj = {email: email, info: info};
+	return(console.log(obj));
 }
