@@ -80,6 +80,12 @@ function displayMessage(element, message) {
 function sendData(email, info) {
 	var obj = {email: email.value, info: info.value};
 	email.parentNode.reset();
-	info.placeholder = "Thank you for your submission. We have received your request and will be in contact with you shortly.";
+	var url = "";
+	fetch(url, {method: "POST", body: JSON.stringify(obj)})
+	.then((res) => res.json())
+	.then((res) => {
+		info.placeholder = "Thank you for your submission. We have received your request and will be in contact with you shortly.";
+		console.log(res);
+	});
 	return(console.log(obj));
 }
