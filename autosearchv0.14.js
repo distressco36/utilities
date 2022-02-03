@@ -58,4 +58,8 @@ searchHandle.addEventListener('change', (e) => {
 
 window.addEventListener('load', () => {
 	document.querySelector('.logo-icon').addEventListener('click', (e) => {window.open('https://criticalassertion.com', '_top')});
+	document.getElementById('submit-review-btn').addEventListener('click', (e) => {
+		e.preventDefault();
+		console.log("Submit Button Clicked");
+	});
 });
