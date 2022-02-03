@@ -68,6 +68,7 @@ window.addEventListener('load', () => {
 });
 
 function displayMessage(element, message) {
+	element.value = '';
 	element.placeholder = message;
 	setTimeout(function(){element.placeholder = 'Email Address'}, 1500);
 	return;
