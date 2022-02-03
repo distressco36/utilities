@@ -58,13 +58,15 @@ searchHandle.addEventListener('change', (e) => {
 
 window.addEventListener('load', () => {
 	document.querySelector('.logo-icon').addEventListener('click', (e) => {window.open('https://criticalassertion.com', '_top')});
-	document.getElementById('submit-review-btn').addEventListener('click', (e) => {
-		e.preventDefault();
-		var element = e.target.parentNode.children[0];
-		var email = element.value;
-		(email == '') ? displayMessage(element, "Please provide an email address") : 
-		(!(email.includes('@') && email.includes('.'))) ? displayMessage(element, "Invalid Email Address") : console.log('Good Job');
-	});
+	if(document.getElementById('submit-review-btn')) {
+		document.getElementById('submit-review-btn').addEventListener('click', (e) => {
+			e.preventDefault();
+			var element = e.target.parentNode.children[0];
+			var email = element.value;
+			(email == '') ? displayMessage(element, "Please provide an email address") : 
+			(!(email.includes('@') && email.includes('.'))) ? displayMessage(element, "Invalid Email Address") : console.log('Good Job');
+		});
+	}
 });
 
 function displayMessage(element, message) {
