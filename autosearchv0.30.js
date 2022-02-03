@@ -85,7 +85,6 @@ function sendData(email, info) {
 	.then((res) => res.json())
 	.then((res) => {
 		info.placeholder = "Thank you for your submission. We have received your request and will be in contact with you shortly.";
-		console.log(res);
 	});
-	return(console.log(obj));
+	return;
 }
