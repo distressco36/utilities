@@ -61,6 +61,6 @@ window.addEventListener('load', () => {
 	document.getElementById('submit-review-btn').addEventListener('click', (e) => {
 		e.preventDefault();
 		var email = e.target.parentNode.children[0].value;
-		(email == '') ? return : (!(email.includes('@') && email.includes('.'))) ? console.log('Please Enter an Email Address') : console.log('Good Job');
+		(email == '') ? console.log("Empty") : (!(email.includes('@') && email.includes('.'))) ? console.log('Please Enter an Email Address') : console.log('Good Job');
 	});
 });
