@@ -80,7 +80,7 @@ function displayMessage(element, message) {
 function sendData(email, info) {
 	var obj = {email: email.value, info: info.value};
 	email.parentNode.reset();
-	var url = "";
+	var url = "https://script.google.com/macros/s/AKfycbx3_JZHs3MGQYwuO91X9BTMTs0HbYYjM_EKxWsAY2MULMvrJ-9kwX64XmoXPtJn6mqb7w/exec";
 	fetch(url, {method: "POST", body: JSON.stringify(obj)})
 	.then((res) => res.json())
 	.then((res) => {
