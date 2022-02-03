@@ -65,7 +65,7 @@ window.addEventListener('load', () => {
 			var info = document.querySelector('.product-review-request').value;
 			var email = element.value;
 			(email == '') ? displayMessage(element, "Please provide an email address") : 
-			(!(email.includes('@') && email.includes('.'))) ? displayMessage(element, "Invalid Email Address") : sendData(email, info);
+			(!(email.includes('@') && email.includes('.'))) ? displayMessage(element, "Invalid Email Address") : sendData(element, info);
 		});
 	}
 });
@@ -78,7 +78,7 @@ function displayMessage(element, message) {
 }
 
 function sendData(email, info) {
-	var obj = {email: email, info: info};
-	email.parentNode.reset();
+	var obj = {email: email.value, info: info};
+	console.log(email.parentNode);
 	return(console.log(obj));
 }
