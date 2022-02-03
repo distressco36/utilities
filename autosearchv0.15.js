@@ -60,6 +60,7 @@ window.addEventListener('load', () => {
 	document.querySelector('.logo-icon').addEventListener('click', (e) => {window.open('https://criticalassertion.com', '_top')});
 	document.getElementById('submit-review-btn').addEventListener('click', (e) => {
 		e.preventDefault();
-		console.log("Submit Button Clicked");
+		var email = e.target.parentNode.children[0].value;
+		(email == '') ? console.log('Email Empty') : (!email.includes('@')) ? console.log('Please Enter an Email Address') : console.log('Good Job');
 	});
 });
