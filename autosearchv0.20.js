@@ -62,7 +62,8 @@ window.addEventListener('load', () => {
 		e.preventDefault();
 		var element = e.target.parentNode.children[0];
 		var email = element.value;
-		(email == '') ? displayMessage(element, "Empty") : (!(email.includes('@') && email.includes('.'))) ? console.log('Please Enter an Email Address') : console.log('Good Job');
+		(email == '') ? displayMessage(element, "Please provide an email address") : 
+		(!(email.includes('@') && email.includes('.'))) ? displayMessage(element, "Invalid Email Address") : console.log('Good Job');
 	});
 });
 
