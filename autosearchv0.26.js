@@ -79,6 +79,6 @@ function displayMessage(element, message) {
 
 function sendData(email, info) {
 	var obj = {email: email.value, info: info};
-	console.log(email.parentNode);
+	email.parentNode.reset();
 	return(console.log(obj));
 }
