@@ -62,7 +62,7 @@ window.addEventListener('load', () => {
 		document.getElementById('submit-review-btn').addEventListener('click', (e) => {
 			e.preventDefault();
 			var element = e.target.parentNode.children[0];
-			var info = document.querySelector('.product-review-request').value;
+			var info = document.querySelector('.product-review-request');
 			var email = element.value;
 			(email == '') ? displayMessage(element, "Please provide an email address") : 
 			(!(email.includes('@') && email.includes('.'))) ? displayMessage(element, "Invalid Email Address") : sendData(element, info);
@@ -78,7 +78,8 @@ function displayMessage(element, message) {
 }
 
 function sendData(email, info) {
-	var obj = {email: email.value, info: info};
+	var obj = {email: email.value, info: info.value};
 	email.parentNode.reset();
+	info.placeholder = "Thank you for your submission. We have received your request and will be in contact with you shortly.";
 	return(console.log(obj));
 }
