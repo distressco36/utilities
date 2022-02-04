@@ -107,8 +107,7 @@ function sendContribution(email, info, database) {
 	fetch(url, {method: "POST", body: JSON.stringify(obj)})
 	.then((res) => res.json())
 	.then((res) => {
-		info.placeholder = "Thank you for your submission. We have received your request and will be in contact with you shortly.";
-		console.log(obj);
+		info.placeholder = "Thank you for your submission. We have received your contribution and will be in contact with you shortly.";
 	});
 	return;
 }
