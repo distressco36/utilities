@@ -71,7 +71,7 @@ window.addEventListener('load', () => {
 	if(document.getElementById('contribute-ta-btn')){
 		document.getElementById('contribute-ta-btn').addEventListener('click', (e) => {
 			e.preventDefault();
-			console.log(e.target.parentNode);
+			console.log(e.target.parentNode.title);
 		});
 	}
 });
