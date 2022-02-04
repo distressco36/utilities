@@ -71,7 +71,12 @@ window.addEventListener('load', () => {
 	if(document.getElementById('contribute-ta-btn')){
 		document.getElementById('contribute-ta-btn').addEventListener('click', (e) => {
 			e.preventDefault();
-			console.log(e.target.parentNode.title);
+			var element = e.target.parentNode.children[0];
+			var info = document.querySelector('.contribute-textarea');
+			var email = element.value;
+			var database = e.target.parentNode.title;
+			(email == '') ? displayMessage(element, "Please provide an email address") : 
+			(!(email.includes('@') && email.includes('.'))) ? displayMessage(element, "Invalid Email Address") : sendContribution(element, info, database);
 		});
 	}
 });
@@ -92,5 +97,11 @@ function sendData(email, info) {
 	.then((res) => {
 		info.placeholder = "Thank you for your submission. We have received your request and will be in contact with you shortly.";
 	});
+	return;
+}
+
+function sendContribution(email, info, database) {
+	var obj = {email: email.value, info: info.value, database: database};
+	console.log(obj);
 	return;
 }
