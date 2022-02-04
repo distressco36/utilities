@@ -68,6 +68,12 @@ window.addEventListener('load', () => {
 			(!(email.includes('@') && email.includes('.'))) ? displayMessage(element, "Invalid Email Address") : sendData(element, info);
 		});
 	}
+	if(document.getElementById('contribute-ta-btn')){
+		document.getElementById('contribute-ta-btn').assEventListener('click', (e) => {
+			e.preventDefault();
+			console.log(e.parentNode.title);
+		});
+	}
 });
 
 function displayMessage(element, message) {
