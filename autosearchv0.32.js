@@ -69,7 +69,7 @@ window.addEventListener('load', () => {
 		});
 	}
 	if(document.getElementById('contribute-ta-btn')){
-		document.getElementById('contribute-ta-btn').assEventListener('click', (e) => {
+		document.getElementById('contribute-ta-btn').addEventListener('click', (e) => {
 			e.preventDefault();
 			console.log(e.parentNode.title);
 		});
