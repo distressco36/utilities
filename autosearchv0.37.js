@@ -102,6 +102,13 @@ function sendData(email, info) {
 
 function sendContribution(email, info, database) {
 	var obj = {email: email.value, info: info.value, database: database};
-	console.log(obj);
+	email.parentNode.reset();
+	var url = 'https://script.google.com/macros/s/AKfycbwj7xsR5iWU6s60mf6_8P8u__fVKJcN6Z0Z46Kd9s-uSUPimuFkHsvEdGd-q-js96hW/exec';
+	fetch(url, {method: "POST", body: JSON.stringify(obj)})
+	.then((res) => res.json())
+	.then((res) => {
+		info.placeholder = "Thank you for your submission. We have received your request and will be in contact with you shortly.";
+		console.log(obj);
+	});
 	return;
 }
